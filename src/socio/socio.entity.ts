@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ClubEntity } from "src/club/club.entity";
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class SocioEntity {
@@ -15,5 +16,8 @@ export class SocioEntity {
 
     @Column()
     fechanacimiento: Date;    
+
+    @ManyToMany(() => ClubEntity, club => club.socios)
+    clubes: ClubEntity[];
 
 }
