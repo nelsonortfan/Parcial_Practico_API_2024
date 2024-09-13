@@ -15,7 +15,7 @@ export class ClubEntity {
     fechafundacion: Date; 
 
     @Column()
-    image: string;
+    imagen: string;
 
     @Column()
     descripcion: string;
