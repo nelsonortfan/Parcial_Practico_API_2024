@@ -1,0 +1,1384 @@
+{
+	"info": {
+		"_postman_id": "71fcf2ab-f156-45fb-9803-91c494d70449",
+		"name": "Clubs-Members",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12463581",
+		"_collection_link": "https://dark-meteor-749020.postman.co/workspace/Team-Workspace~4752c990-e968-4830-8357-657030c6800d/collection/12463581-71fcf2ab-f156-45fb-9803-91c494d70449?action=share&source=collection_link&creator=12463581"
+	},
+	"item": [
+		{
+			"name": "Add a Club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"club_id\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Club de golf los lagartos\",\n    \"fechafundacion\": \"2024-01-02\",\n    \"imagen\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"descripcion\": \"Club de golf ubicado en el noroccidente de Bogotá\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a Club",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Club de golf los lagartos\",\n    \"fechafundacion\": \"2024-01-02\",\n    \"imagen\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"descripcion\": \"Club de golf ubicado en el noroccidente de Bogotá\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{    \n    \"id\": \"37d742be-e0e0-4024-b840-64cb41623aed\",\n    \"nombre\": \"Club de golf los lagartos\",\n    \"fechafundacion\": \"2024-01-02\",\n    \"imagen\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"descripcion\": \"Club de golf ubicado en el noroccidente de Bogotá\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a Socio 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"member_id_1\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"James Rodriguez\",\n    \"correoelectronico\": \"micorreo@gmail.com\",\n    \"fechanacimiento\": \"1988-05-06\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a Socio 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"James Rodriguez\",\n    \"correoelectronico\": \"micorreo@gmail.com\",\n    \"fechanacimiento\": \"1988-05-06\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"James Rodriguez\",\n    \"correoelectronico\": \"micorreo@gmail.com\",\n    \"fechanacimiento\": \"1988-05-06\",\n    \"id\": \"09fcf884-48b1-4c4a-995c-48e4853b0569\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add a Socio 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"member_id_2\", data.id);",
+							"",
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Luis Diaz\",\n    \"correoelectronico\": \"micorreo2@gmail.com\",\n    \"fechanacimiento\": \"1994-09-12\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a Socio 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"James Rodriguez\",\n    \"correoelectronico\": \"micorreo@gmail.com\",\n    \"fechanacimiento\": \"1988-05-06\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"Luis Diaz\",\n    \"correoelectronico\": \"micorreo2@gmail.com\",\n    \"fechanacimiento\": \"1994-09-12\",\n    \"id\": \"0fa942eb-6c9c-4453-9c48-0005e3e34e19\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add socio1 to a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"{{member_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add socio1 to a club",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"{{member_id_1}}"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-KviNwRfAdyNZmiHt915SK9j7Ask\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 18:55:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"1b7203d4-15cd-4e49-87f1-c20565700001\",\n    \"nombre\": \"Club de golf los lagartos\",\n    \"fechafundacion\": \"2024-01-02T05:00:00.000Z\",\n    \"imagen\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"descripcion\": \"Club de golf ubicado en el noroccidente de Bogotá\",\n    \"socios\": [\n        {\n            \"id\": \"4e7dc452-1c2c-4bbe-a227-31e5d04a2145\",\n            \"nombre\": \"James Rodriguez\",\n            \"correoelectronico\": \"micorreo@gmail.com\",\n            \"fechanacimiento\": \"1988-05-06T05:00:00.000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add an invalid socio to a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The socio with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/00000000-0000-0000-0000-000000000000",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"00000000-0000-0000-0000-000000000000"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add an invalid artwork to a museum",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/00000000-0000-0000-0000-000000000000",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"00000000-0000-0000-0000-000000000000"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a-HdSXQ9DOFik77lA6BTILifOYwSg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:10:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The socio with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all socios of a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all socios of a club",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "377"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"179-6S7ZAxEW3K6BN+FOKdKf3W/TOeg\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:21:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"4e7dc452-1c2c-4bbe-a227-31e5d04a2145\",\n        \"nombre\": \"James Rodriguez\",\n        \"correoelectronico\": \"micorreo@gmail.com\",\n        \"fechanacimiento\": \"1988-05-06T05:00:00.000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get a socio of a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"{{member_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a socio of a club",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"{{member_id_1}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-ikNQ+rTE1CHOKyECsxXWUY0AeNY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:41:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"4e7dc452-1c2c-4bbe-a227-31e5d04a2145\",\n    \"nombre\": \"James Rodriguez\",\n    \"correoelectronico\": \"micorreo@gmail.com\",\n    \"fechanacimiento\": \"1988-05-06T05:00:00.000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get a socio non-associated to a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"    pm.response.to.have.status(412);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"{{member_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a socio non-associated to a club",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"{{member_id_2}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "375"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"177-ikNQ+rTE1CHOKyECsxXWUY0AeNY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:41:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"The socio with the given id is not associated to the club\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update socios of a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": \"{{member_id_2}}\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update socios of a club",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n         \"id\": \"{{member_id_2}}\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1149"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47d-lloYeq9lZuh7ys1VbmtoB9Zh6o4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:56:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"c0c098de-3c3b-4a0d-b298-09eb59c12969\",\n    \"nombre\": \"Club de golf los lagartos\",\n    \"fechafundacion\": \"2024-01-02T05:00:00.000Z\",\n    \"imagen\": \"https://assets.catawiki.nl/assets/2019/3/7/2/f/5/2f5c8a17-0b06-4f26-b4a7-4fa51a430ce1.jpg\",\n    \"descripcion\": \"Club de golf ubicado en el noroccidente de Bogotá\",\n    \"socios\": [\n        {\n            \"id\": \"7953965a-e270-4119-899b-35dd351ebb40\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update invalid socios of a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The socio with the given id was not found\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update invalid socios of a club",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"id\": \"00000000-0000-0000-0000-000000000000\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/museums/{{museum_id}}/artworks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"museums",
+								"{{museum_id}}",
+								"artworks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1149"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47d-lloYeq9lZuh7ys1VbmtoB9Zh6o4\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:56:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"The socio with the given id was not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a socio of a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"{{member_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a socio of a club",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"{{member_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:50:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete a socio non-associated to a club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 412\", function () {",
+							"    pm.response.to.have.status(412);",
+							"});",
+							"",
+							"pm.test(\"Get expected error message\", function () {",
+							"    var data = pm.response.json();",
+							"    pm.expect(data.message).to.eql(\"The socio with the given id is not associated to the club\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}",
+						"members",
+						"{{member_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete a socio non-associated to a club",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}/members/{{member_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}",
+								"members",
+								"{{member_id_1}}"
+							]
+						}
+					},
+					"status": "Precondition Failed",
+					"code": 412,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "73"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"49-v/cpCsS/IuHJb9v22y7e8zPAYzs\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 20:50:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 412,\n    \"message\": \"The socio with the given id is not associated to the club\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete one socio 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/members/{{member_id_1}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members",
+						"{{member_id_1}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete one socio 1",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/members/{{member_id_1}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members",
+								"{{member_id_1}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:06:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete one socio 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/members/{{member_id_2}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members",
+						"{{member_id_2}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete one socio 2",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/members/{{member_id_2}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members",
+								"{{member_id_2}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:06:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete one club",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/{{club_id}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"{{club_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete one club",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/{{club_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"{{club_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 02 Aug 2022 19:06:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000/api/v1"
+		}
+	]
+}
