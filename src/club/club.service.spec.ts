@@ -31,7 +31,7 @@ describe('ClubService', () => {
         nombre: faker.company.name(),                
         fechafundacion: faker.date.anytime(),
         imagen: faker.image.url(),
-        descripcion: faker.lorem.word(100), 
+        descripcion: faker.lorem.word(50), 
         socios: []
         })
         clubesList.push(club);        
@@ -68,7 +68,7 @@ describe('ClubService', () => {
       nombre: faker.company.name(),                
       fechafundacion: faker.date.anytime(),
       imagen: faker.image.url(),
-      descripcion: faker.lorem.word(100), 
+      descripcion: faker.lorem.word(50), 
       socios: []
     }
 
@@ -81,6 +81,19 @@ describe('ClubService', () => {
     expect(storedClub.descripcion).toEqual(newClub.descripcion)
     expect(storedClub.fechafundacion).toEqual(newClub.fechafundacion)
     expect(storedClub.imagen).toEqual(newClub.imagen)
+  });
+
+  it('create with a description greater than 100 should throw an exception', async () => {
+    const club: ClubEntity = {
+      id: "",
+      nombre: faker.company.name(),                
+      fechafundacion: faker.date.anytime(),
+      imagen: faker.image.url(),
+      descripcion: "qweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqweqwert", 
+      socios: []
+    }
+
+    await expect(() => service.create(club)).rejects.toHaveProperty("message", "The lenght of the description of the club should not be greater that 100")
   });
 
   it('update should modify a club', async () => {

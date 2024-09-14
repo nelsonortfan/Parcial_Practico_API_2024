@@ -80,6 +80,18 @@ describe('SocioService', () => {
     expect(storedSocio.fechanacimiento).toEqual(newSocio.fechanacimiento)    
   });
 
+  it('create should throw an exception for the bad email', async () => {
+    const socio: SocioEntity = {
+      id: "",
+      nombre: faker.company.name(),                
+      correoelectronico: "micorreo.com",
+      fechanacimiento: faker.date.anytime(),
+      clubes: []
+    }
+
+    await expect(() => service.create(socio)).rejects.toHaveProperty("message", "This is not a valid email")    
+  });
+
   it('update should modify a socio', async () => {
     const socio: SocioEntity = sociosList[0];
     socio.nombre = "New name";
