@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { IsDate, Max } from 'class-validator';
 import { IsNotEmpty, IsString } from "class-validator";
 
 export class ClubDto {
@@ -8,7 +7,7 @@ export class ClubDto {
     @IsNotEmpty()
     readonly nombre: string;
 
-    @IsDate()
+    @IsString()
     @IsNotEmpty()
     readonly fechafundacion: Date; 
 
@@ -18,7 +17,6 @@ export class ClubDto {
 
     @IsString()
     @IsNotEmpty()
-    @Max(100)
     readonly descripcion: string;
 
 }
