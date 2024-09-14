@@ -72,7 +72,7 @@ export class ClubSocioService {
         }
      
         club.socios = socios;
-        return await this.socioRepository.save(club);
+        return await this.clubRepository.save(club);
       }
 
 

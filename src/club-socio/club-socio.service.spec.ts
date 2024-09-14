@@ -35,9 +35,9 @@ describe('ClubSocioService', () => {
     for(let i = 0; i < 5; i++){
         const socio: SocioEntity = await socioRepository.save({
           nombre: faker.company.name(),                
-          correoelectronico: faker.internet.email(),
+          correoelectronico: "micorreo@gmail.com",
           fechanacimiento: faker.date.anytime(),
-        })        
+        })     
         sociosList.push(socio);
     }
 
@@ -143,11 +143,11 @@ describe('ClubSocioService', () => {
   });
 
 
-  /*
+  
   it('updateMembersFromClub should update socios list for a club', async () => {
     const newSocio: SocioEntity = await socioRepository.save({
       nombre: faker.company.name(),                      
-      correoelectronico: faker.internet.email(),
+      correoelectronico: "nuevocorreo@gmail.com",
       fechanacimiento: faker.date.anytime()
     });
 
@@ -158,9 +158,7 @@ describe('ClubSocioService', () => {
     expect(updatedClub.socios[0].fechanacimiento).toBe(newSocio.fechanacimiento);
   });
 
-  */
-
-
+  
   it('updateMembersFromClub should throw an exception for an invalid club', async () => {
     const newSocio: SocioEntity = await socioRepository.save({
       nombre: faker.company.name(),                      
