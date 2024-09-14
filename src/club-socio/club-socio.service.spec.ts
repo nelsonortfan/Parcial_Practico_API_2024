@@ -90,4 +90,58 @@ describe('ClubSocioService', () => {
   });
 
 
+  it('addMemberToClub should throw an exception for an invalid club', async () => {
+    const newSocio: SocioEntity = await socioRepository.save({
+      nombre: faker.company.name(),                
+      correoelectronico: faker.internet.email(),
+      fechanacimiento: faker.date.anytime()
+    });
+
+    await expect(() => service.addMemberToClub("0", newSocio.id)).rejects.toHaveProperty("message", "The club with the given id was not found");
+  });
+
+
+  it('findMemberFromClub should return socio by club', async () => {
+    const socio: SocioEntity = sociosList[0];
+    const storedSocio: SocioEntity = await service.findMemberFromClub(club.id, socio.id, )
+    expect(storedSocio).not.toBeNull();
+    expect(storedSocio.nombre).toBe(socio.nombre);
+    expect(storedSocio.correoelectronico).toBe(socio.correoelectronico);
+  });
+
+
+  it('findMemberFromClub should throw an exception for an invalid socio', async () => {
+    await expect(()=> service.findMemberFromClub(club.id, "0")).rejects.toHaveProperty("message", "The socio with the given id was not found"); 
+  });
+
+
+  it('findMemberFromClub should throw an exception for an invalid club', async () => {
+    const socio: SocioEntity = sociosList[0]; 
+    await expect(()=> service.findMemberFromClub("0", socio.id)).rejects.toHaveProperty("message", "The club with the given id was not found"); 
+  });
+
+
+  it('findMemberFromClub should throw an exception for a socio not associated to the club', async () => {
+    const newSocio: SocioEntity = await socioRepository.save({
+      nombre: faker.company.name(),                
+      correoelectronico: faker.internet.email(),
+      fechanacimiento: faker.date.anytime()
+    });
+
+    await expect(()=> service.findMemberFromClub(club.id, newSocio.id)).rejects.toHaveProperty("message", "The socio with the given id is not associated to the club"); 
+  });
+
+
+  it('findMembersFromClub should return socios by club', async ()=>{
+    const socios: SocioEntity[] = await service.findMembersFromClub(club.id);
+    expect(socios.length).toBe(5)
+  });
+
+
+  it('findMembersFromClub should throw an exception for an invalid club', async () => {
+    await expect(()=> service.findMembersFromClub("0")).rejects.toHaveProperty("message", "The club with the given id was not found"); 
+  });
+
+
+
 });
