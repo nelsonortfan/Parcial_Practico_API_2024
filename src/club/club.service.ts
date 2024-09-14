@@ -36,6 +36,10 @@ export class ClubService {
     }
 
     async update(id: string, club: ClubEntity): Promise<ClubEntity>{
+
+        if(club.descripcion.length > 100)
+            throw new BusinessLogicException("The lenght of the description of the club should not be greater that 100", BusinessError.PRECONDITION_FAILED);
+
         const persistedClub : ClubEntity = await this.clubRepository.findOne({where: {id}});
         if(!persistedClub)
             throw new BusinessLogicException("The club with the given id was not found", BusinessError.NOT_FOUND);
